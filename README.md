@@ -19,7 +19,7 @@ Setup Instructions
 
 1. Clone the Repository
 bash
-git clone https://github.com/Vidhi2104/registration-crud-app.git
+git clone https://github.com/Vidhi2104/CRUD.git
 cd registration-crud-app
 
 2. Set up the Database
