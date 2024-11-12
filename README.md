@@ -80,5 +80,5 @@ Database connection errors and invalid queries are also handled with appropriate
 Contributing
 Feel free to contribute by creating a pull request or by reporting any issues.
 
-License
-This project is licensed under the MIT License.
+License 
+This project is licensed under the GNU General Public License v3.0
