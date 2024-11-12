@@ -1,5 +1,5 @@
 # CRUD
-This repository contains a simple CRUD (Create, Read, Update, Delete) application that manages user registrations. The application uses an SQL database to store and retrieve registration data, with fields such as ID, Name, Email, and Date of Birth.
+This repository contains a simple CRUD (Create, Read, Update, Delete) application that manages user registrations. The application uses an SQL database to store and retrieve registration data, with fields such as FirstName, LastName, Email, DateOfBirth, PhoneNumber, Gender, Address, City, State, ZipCode, Country
 
 Features
 Create a new user registration.
@@ -12,7 +12,7 @@ Database: MySQL
 
 Prerequisites
 Python (version 3.x recommended)
-SQL Database (MySQL or PostgreSQL)
+SQL Database MySQL 
 Git for cloning the repository
 
 Setup Instructions
@@ -27,14 +27,24 @@ Create a new database in your SQL server (MySQL or PostgreSQL).
 Use the following SQL code to create the Registration table:
 sql
 CREATE TABLE Registration (
-    ID INT PRIMARY KEY AUTO_INCREMENT,
-    Name VARCHAR(50) NOT NULL,
-    Email VARCHAR(100) UNIQUE NOT NULL,
-    DateOfBirth DATE NOT NULL,
-    CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    ID INT PRIMARY KEY AUTO_INCREMENT PRIMARY KEY,
+    FirstName VARCHAR(50) NOT NULL,
+    LastName VARCHAR(50) NOT NULL,
+    Email VARCHAR(100) NOT NULL UNIQUE,
+    Date Of Birth DATE NOT NULL,
+    Phone Number VARCHAR(20),
+    Gender ENUM(Male, 'Female', 'Other', 'Prefer not to say')
+    Address VARCHAR(255),
+    City VARCHAR(100),
+    State VARCHAR(100),
+    ZipCode VARCHAR(20),
+    Country VARCHAR(100),
+    Registration Date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    IsActive BOOLEAN DEFAULT TRUE
+    IsVerified BOOLEAN DEFAULT FALSE
 );
 
-3. Configure Database Connection
+4. Configure Database Connection
 Update the database configuration in your backend code (typically in config.py or directly in crud.py).
 Example configuration (MySQL):
 python
@@ -43,12 +53,12 @@ DB_USER = "your_username"
 DB_PASSWORD = "your_password"
 DB_NAME = "your_database"
 
-4. Install Dependencies
+5. Install Dependencies
 Navigate to the backend directory and install the required Python packages:
 bash
 pip install -r requirements.txt
 
-5. Run the Backend Server
+6. Run the Backend Server
 In the backend directory, start the server:
 bash
 python crud.py
